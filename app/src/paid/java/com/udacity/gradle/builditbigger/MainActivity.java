@@ -6,9 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.JokesLibrary;
+import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
+import com.udacity.gradle.builditbigger.R;
 
 import stock.omari.com.showjoke.ShowJokeActivity;
 
@@ -53,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
     String jokeText=joker.getJoke();
 
     public void tellJoke(View view) {
-        Toast.makeText(this,"Hellooo",Toast.LENGTH_SHORT).show();
+
+
         new EndpointsAsyncTask(new JokeRetrievalHandler()).execute();
     }
 
