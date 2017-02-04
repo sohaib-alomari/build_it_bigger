@@ -3,6 +3,7 @@ package com.example;
 public class JokesLibrary {
 
     public String getJoke() {
-        return "This is totally a funny joke";
+        String theJoke="This is a Totally funny Joke";
+        return theJoke;
     }
 }

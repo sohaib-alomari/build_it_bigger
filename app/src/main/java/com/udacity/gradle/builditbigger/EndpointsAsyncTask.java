@@ -4,9 +4,9 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Pair;
 
-import com.example.alomarisf.myapplication.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
@@ -18,6 +18,9 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
     public EndpointsAsyncTask(JokeReceivedListener listener) {
         jokeListener = listener;
     }
+
+
+
 
 
     @Override
@@ -41,12 +44,13 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
     }
 
     @Override
-    protected void onPostExecute(String result) {
+    public void onPostExecute(String result) {
         jokeListener.onJokeRetrieved(result);
 
     }
 
     public interface JokeReceivedListener {
+
         void onJokeRetrieved(String joke);
     }
 }
